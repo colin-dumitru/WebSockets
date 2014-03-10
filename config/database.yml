@@ -2,11 +2,11 @@ development:
   adapter: postgresql
   timeout: 5000
   encoding: unicode
-  database: d5oa8kg3k5ufa6 # name your development app something
-  host: ec2-107-22-190-179.compute-1.amazonaws.com
+  database: d31rul4p287i8b # name your development app something
+  host: ec2-54-225-101-124.compute-1.amazonaws.com
   pool: 5
-  username: onjavqmlrprpxi
-  password: vlV1K2xLeqV5Pmzos1UzkPmU5n # or leave blank if you didn't set a password
+  username: itszosskaopwrs
+  password: J4Lh0NKV5BEwdn14wlxW46Hjfo # or leave blank if you didn't set a password
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,8 +21,8 @@ production:
   adapter: postgresql
   timeout: 5000
   encoding: unicode
-  database: d5oa8kg3k5ufa6 # name your development app something
-  host: ec2-107-22-190-179.compute-1.amazonaws.com
+  database: d31rul4p287i8b # name your development app something
+  host: ec2-54-225-101-124.compute-1.amazonaws.com
   pool: 5
-  username: onjavqmlrprpxi
-  password: vlV1K2xLeqV5Pmzos1UzkPmU5n # or leave blank if you didn't set a password
+  username: itszosskaopwrs
+  password: J4Lh0NKV5BEwdn14wlxW46Hjfo # or leave blank if you didn't set a password

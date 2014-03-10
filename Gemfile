@@ -32,3 +32,4 @@ end
 gem 'redis'
 gem 'puma'
 gem 'tubesock'
+gem 'pg'

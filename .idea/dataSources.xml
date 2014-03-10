@@ -15,9 +15,9 @@
     </data-source>
     <data-source source="LOCAL" name="Rails WebSockets: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="9cd8f88f-5e2c-4325-a024-b599f80dcb40">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-107-22-190-179.compute-1.amazonaws.com/d5oa8kg3k5ufa6</jdbc-url>
-      <user-name>onjavqmlrprpxi</user-name>
-      <user-password>dfdcdfc6dffcdf9bdfe1df98dfd2dfe6dfcfdfdbdffcdf9fdffadfc7dfd0dfc5dfd9df9bdfffdfd0dfc1dffadfc7dfffdf9fdfc4</user-password>
+      <jdbc-url>jdbc:postgresql://ec2-54-225-101-124.compute-1.amazonaws.com/d31rul4p287i8b</jdbc-url>
+      <user-name>itszosskaopwrs</user-name>
+      <user-password>dfe0df9edfe6dfc2df9adfe4dfe1dffcdf9fdfe8dfefdfdddfcedfc4df9bdf9edfdddfc6dfd2dffddf9edf9cdfe2dfc0dfccdfc5</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
@@ -29,9 +29,9 @@
     </data-source>
     <data-source source="LOCAL" name="Rails WebSockets: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="e02e3e22-9774-46cd-b782-95ce2a2f7a9a">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://ec2-107-22-190-179.compute-1.amazonaws.com/d5oa8kg3k5ufa6</jdbc-url>
-      <user-name>onjavqmlrprpxi</user-name>
-      <user-password>dfdcdfc6dffcdf9bdfe1df98dfd2dfe6dfcfdfdbdffcdf9fdffadfc7dfd0dfc5dfd9df9bdfffdfd0dfc1dffadfc7dfffdf9fdfc4</user-password>
+      <jdbc-url>jdbc:postgresql://ec2-54-225-101-124.compute-1.amazonaws.com/d31rul4p287i8b</jdbc-url>
+      <user-name>itszosskaopwrs</user-name>
+      <user-password>dfe0df9edfe6dfc2df9adfe4dfe1dffcdf9fdfe8dfefdfdddfcedfc4df9bdf9edfdddfc6dfd2dffddf9edf9cdfe2dfc0dfccdfc5</user-password>
       <libraries>
         <library>
           <url>file://$USER_HOME$/.RubyMine50/config/jdbc-drivers/postgresql-driver-license.txt</url>
