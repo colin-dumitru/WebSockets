@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSockets</title>
+
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <script>
+    var session_id = <%=@session_id%>;
+  </script>
+
+</head>
+<body>
+
+<div class="main">
+  <video autoplay id='your_video' class="video" width="400" height="300"></video>
+  <img id='friend_video' class="video"  width="400" height="300">
+  <canvas id='hidden_canvas' style="display: none" class="video"  width="400" height="300"></canvas>
+
+</div>
+
+
+</body>
+</html>
