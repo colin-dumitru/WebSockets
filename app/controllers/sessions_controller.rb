@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def home
     id = params[:id]
-    session[:id] = Random.rand(10000000)
+    session[:id] = session[:id] || Random.rand(10000000)
 
     if @@sessions[id]
       @@sessions[id].user2 = session[:id]
@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
     end
 
     @session_id = id
+    @user_id = session[:id]
 
     render 'home/home'
   end
@@ -34,6 +35,15 @@ class SessionsController < ApplicationController
         tubesock.send_data @@sessions[params[:id]].set_data(session_id, data)
       end
     end
+  end
+
+  def message
+    Pusher[params[:id]].trigger('new_message', {
+        user_id: session[:id],
+        message: params[:text]
+    })
+
+    render json: 'Message Sent'
   end
 end
 

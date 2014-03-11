@@ -1,10 +1,10 @@
 body{
-    background-color: lightgray;
+    background-color: #555;
 }
 
 .main{
     width: 830px;
-    background-color: white;
+    background-color: lightgray;
     margin: 0 auto;
 }
 
@@ -14,4 +14,34 @@ body{
     margin:5px;
     border: darkgrey;
     box-shadow: 0 0 10px black;
+}
+
+.messages{
+    font-size: 30px;
+    font-family: Verdana;
+}
+
+.my_message{
+    border: 1px solid grey;
+    border-right: 5px solid orange;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+.other_message{
+    border: 1px solid grey;
+    border-left: 5px solid blue;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+.message_input{
+    background-color: transparent;
+    border: none;
+    border-right: 5px solid orange;
+    font-size: 30px;
+    font-family: Verdana;
+    margin: 5px;
 }

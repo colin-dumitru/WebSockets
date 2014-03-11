@@ -7,5 +7,6 @@ WebSockets::Application.routes.draw do
 
   get 'session/:id' => 'sessions#home'
   get 'session/:id/stream' => 'sessions#stream'
+  get 'session/:id/message/:text' => 'sessions#message'
 
 end

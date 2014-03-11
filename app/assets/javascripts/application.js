@@ -9,7 +9,10 @@ var WIDTH = 400,
 
     friend_img = null,
 
-    socket = null;
+    socket = null,
+
+    pusher = new Pusher('7d1da5552b0624b2d297'),
+    channel = pusher.subscribe(session_id);
 
 function drawFriendData(bytes) {
     friend_img.src = bytes;
@@ -31,9 +34,41 @@ function snapshot() {
     }
 }
 
-function onMessage(event) {
+function onSocketMessage(event) {
     console.log(event);
     drawFriendData(event.data);
+}
+
+function createVideoStream() {
+    (navigator.webkitGetUserMedia || navigator.mozGetUserMedia).call(navigator, { video: {
+        mandatory: {
+            maxWidth: WIDTH,
+            maxHeight: HEIGHT
+        }
+    }}, function (stream) {
+        video.src = window.URL.createObjectURL(stream);
+        personalStream = stream;
+    }, function (error) {
+        alert(error.name);
+    });
+}
+
+function sendMessage(message) {
+    $.getJSON('/session/' + session_id + '/message/' + encodeURIComponent(message));
+}
+
+function onMessage(data) {
+    var class_name = null;
+
+    if(data.user_id == user_id) {
+        class_name = 'my_message';
+    } else {
+        class_name = 'other_message';
+    }
+
+    $('.messages').prepend($('<div></div>')
+        .addClass(class_name)
+        .text(data.message));
 }
 
 $(document).ready(function() {
@@ -42,20 +77,19 @@ $(document).ready(function() {
     ctx = canvas.getContext('2d');
     friend_img = document.getElementById('friend_video');
 
-    (navigator.webkitGetUserMedia || navigator.mozGetUserMedia).call(navigator, { video: {
-        mandatory: {
-            maxWidth: WIDTH,
-            maxHeight: HEIGHT
+    createVideoStream();
+
+    $(".message_input").keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendMessage($(this).val());
+            $(this).val('');
         }
-    }}, function(stream) {
-        video.src = window.URL.createObjectURL(stream);
-        personalStream = stream;
-    }, function(error) {
-        alert(error.name);
     });
 
+    channel.bind('new_message', onMessage);
+
     socket = new WebSocket('ws://' + window.location.host + '/session/' + session_id + '/stream');
-    socket.onmessage = onMessage;
+    socket.onmessage = onSocketMessage;
 
     window.setInterval(snapshot, 1000 / 2);
 });
