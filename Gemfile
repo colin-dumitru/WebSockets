@@ -30,7 +30,6 @@ group :doc do
 end
 
 gem 'redis'
-gem 'puma'
+#gem 'puma'
 gem 'tubesock'
-gem 'pg'
 gem 'pusher'
